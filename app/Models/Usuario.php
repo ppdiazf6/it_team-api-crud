@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Usuario extends Model
 {
     use HasFactory;
+    protected $table = 'Usuarios';
         
     //  Funcion para buscar usuarios segun filtros  
     public function scopeListUsers($builder, $filter_params)

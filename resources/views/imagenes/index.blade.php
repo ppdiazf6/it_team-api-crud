@@ -66,7 +66,7 @@
                                 @foreach( $imagesArray as $keyImage => $valueImage )
                                     <div class="col-md-3 mt-2">
                                         <div class="card text-white">
-                                            <img src="{{ $valueImage['previewURL'] }}" alt="Image">
+                                            <img src="{{ $valueImage['previewURL'] }}" alt="Image" height="150px">
                                             <div class="card-img-overlay">
                                                 <small>
                                                     <a href="{{ route('imagenes.detail', $valueImage['id']) }}" 

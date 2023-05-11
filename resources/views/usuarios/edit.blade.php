@@ -44,6 +44,10 @@
                             </select>
                         </div>
                         <div class="col-sm-4">
+                            <label>Tipo de Usuario</label>
+                            <input type="text" name="tipo_usuario" class="form-control" value="{{ $user->tipo_usuario }}" required>
+                        </div>
+                        <div class="col-sm-4">
 						    <label for="slc_tipo_doc" class="label-control">Tipo de Documento</label>
 							<select class="form-control" name="tipo_documento" id="slc_tipo_doc" required>
 								<option value="" selected disabled>[Elija Tipo de Documento]</option>

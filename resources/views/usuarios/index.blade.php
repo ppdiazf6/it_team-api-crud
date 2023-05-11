@@ -8,6 +8,8 @@
 		
 	<div class="content">
 		<div class="container-fluid">
+            <!-- $base_url = Request::url(); -->
+            <input type="hidden" value="{{ Request::url() }}" name="base_url" id="base_url">
 					
 			@if ( session('success') )
                 <div class="alert alert-success">
@@ -61,6 +63,7 @@
 											<th>Documento</th>
                                             <th>Edad</th>
                                             <th>Rol</th>
+                                            <th>Tipo de Usuario</th>
 											<th class="text-center">Opción</th>
 										</tr>
 									</thead>
@@ -87,6 +90,7 @@
                                                     </td>
 													<td>{{ $valueUsuario->edad }}</td>
                                                     <td>{{ $valueUsuario->rol->name }}</td>
+                                                    <td>{{ $valueUsuario->tipo_usuario }}</td>
 													<td class="text-center">
                                                         <div class="d-flex">
                                                             <a href="{{ route('usuarios.edit', $IdUsuario) }}" 
@@ -198,9 +202,12 @@
                         age = $('#txt_edad').val();
                         
                     //  url del proyecto...
-                    var base_url = 'http://localhost/pedro/pruebas/red-social-crud-it_team/public';
+                    // var base_url = 'http://localhost/pedro/pruebas/red-social-crud-it_team/public';
+                    // var base_url = 'http://127.0.0.1:8000';
+                    var base_url = $('#base_url').val(); //'?php echo base_url; ?>'
+                    console.log(base_url);
 
-                    var uri_suggestion = base_url + '/usuarios?f_name='+fname+'&l_name='+lname+'&tdoc='+tdoc+'&ndoc='+ndoc+'&r='+rol+'&e='+age;
+                    var uri_suggestion = base_url + '?f_name='+fname+'&l_name='+lname+'&tdoc='+tdoc+'&ndoc='+ndoc+'&r='+rol+'&e='+age;
                         
                     window.location = uri_suggestion;
                 });

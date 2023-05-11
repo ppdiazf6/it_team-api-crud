@@ -50,6 +50,10 @@
 							</select>
 						</div>
 						<div class="col-sm-4">
+							<label>Tipo de Usuario</label>
+							<input type="text" name="tipo_usuario" class="form-control" placeholder="" required>
+						</div>
+						<div class="col-sm-4">
 							<label for="txt_documento" class="label-control">Número de Documento</label>
 							<input class="form-control" type="text" name="documento" id="txt_documento" placeholder="" required
 									value="{{ old('documento') }}">

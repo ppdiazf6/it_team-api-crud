@@ -17,6 +17,7 @@ class UsuarioController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -117,6 +118,7 @@ class UsuarioController extends Controller
             'nombre' => 'required|max:255',
             'apellido' => 'required|max:255',
             'edad' => 'required|max:2',
+            'tipo_usuario' => 'required',
             'tipo_documento' => 'required|integer',
             'documento' => 'required',
             'rol' => 'required',
@@ -133,6 +135,7 @@ class UsuarioController extends Controller
             $user->nombre = $request->nombre;
             $user->apellido = $request->apellido;
             $user->edad = $request->edad;
+            $user->tipo_usuario = $request->tipo_usuario;
             $user->tipo_documento = $request->tipo_documento;
             $user->numero_documento = $request->documento;
             $user->role_id = $request->rol;
@@ -186,6 +189,7 @@ class UsuarioController extends Controller
             'apellido' => 'required|max:255',
             'edad' => 'required|max:2',
             'tipo_documento' => 'required|integer',
+            'tipo_usuario' => 'required',
             'documento' => 'required',
             'rol' => 'required',
         ]);
@@ -213,6 +217,7 @@ class UsuarioController extends Controller
         $usuario->edad = $request->edad;
         $usuario->tipo_documento = $request->tipo_documento;
         $usuario->numero_documento = $request->documento;
+        $usuario->tipo_usuario = $request->tipo_usuario;
         $usuario->role_id = $request->rol;
         
         $usuario->save();
